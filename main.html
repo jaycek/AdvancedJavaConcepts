@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Java</title>
+</head>
+<body>
+    <h2>Today's date is </h2>
+    <p id="ddate"></p>
+    <button onclick="getDay();">Display day of week</button>
+
+    <p id="day"></p>
+    
+    <script>
+        var ddate = new Date();
+        document.getElementById("ddate").innerHTML = ddate.toDateString();
+    </script>
+    <hr>
+    <h3>Use Strict Operations</h3>
+    <hr>
+    <button onclick="turnstricton(1,2,3);">Use Strict</button>
+    <button onclick="turnstrictoff();">Turn Strict Off</button>
+    <hr>
+    <h3>String Operations</h3>
+    <label>Enter you full name separated by a white space:</label>
+    
+    <input type="text" id="name" size="50px" > 
+    <br>
+    <br>
+    <button id="namesubmit" onclick="splitName();">Split Names</button>
+    <br>
+    <br>
+    <input type="text" id="replaceText" size="25px" > 
+    
+    <button  onclick="replaceString();">Replace this with that</button>
+    <label id="repString"></label>
+    <hr>
+    <button  onclick="displayEscapenotations();">Display formatted text </button>
+    <p id="demo">
+        <script>
+            document.getElementById("demo").innerHTML = 
+            "Jesus loves \
+            you "
+
+            var x = "John";        // x is a string
+            var y = new String("John");  // y is an object
+            document.getElementById("demo").innerHTML+= (x==y);
+
+            var str = "Please locate where 'locate' occurs!";
+            var pos = str.search("locate");
+            document.getElementById("demo").innerHTML = pos;
+
+            var str = "Apple, Banana, Kiwi";
+            var res = str.substring(-1,5);
+            document.getElementById("demo").innerHTML = res; 
+
+            var txt = "I can eat bananas all day";
+            //res=txt.indexOf('s');
+            //to display bananas
+            //res = txt.slice(10,17);
+            //res = txt.substring(10,17);
+            res = txt.substr(10);//doesnt have 2nd aruguement , so displays all text from bananas
+            document.getElementById("demo").innerHTML = res; 
+
+            var text1= "Hello There"
+            var text2= text1.toLocaleUpperCase();
+            document.getElementById("demo").innerHTML = text2; 
+            
+            var text = "Hello" + " " + "World!";
+            var text1 = "Hello".concat(" ", "World!");
+            document.getElementById("demo").innerHTML = text + text1; 
+
+            var str = "HELLO WORLD";
+            document.getElementById("demo").innerHTML=str[0];   
+            var x = 123e-5;
+            document.getElementById("demo").innerHTML= 2 / 0; 
+
+            var num = 2.34897654;
+            document.getElementById("demo").innerHTML=  num.toFixed(num,4); //not working
+            
+            console.log(Number("Jayce"));//returns NaN
+
+        </script>
+    </p>
+    <hr>
+    <h3>Array Operations</h3>
+        <button onclick="displayArray();">Display Array</button>
+
+    <p id="arrayDisplay"></p>
+
+    <button onclick="dispLoop();">Display Array Loop</button>
+
+    <p id="disp"></p>
+    <hr>
+    <button onclick="sortNum();">Display Sorted Array using Compare</button>
+
+    <p id="arrNum"></p>
+    
+    <button onclick="newArr();">Multiply array by 2</button>
+
+    <p id="arr"></p>
+    
+    <hr>
+    <button onclick="filterNum();">Display filtered Array for num>18</button>
+
+    <p id="arrFil"></p>
+    
+    <button onclick="dispThis();">Display use of This</button>
+    <button onclick="this.style.display='none'">Click to Remove Me!</button>
+    
+    <br>
+    <br>
+    
+    <button onclick="arrow();">Use of arrow function</button>
+
+    <script src="main.js"></script>
+    <script src="strings.js"></script>
+    <script src="array.js"></script>
+
+</body>
+</html>
